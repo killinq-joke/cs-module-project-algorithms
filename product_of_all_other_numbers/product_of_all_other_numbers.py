@@ -9,16 +9,16 @@ def product_of_all_other_numbers(arr):
     result = []
     for o in range(len(arr)):
         for i in range(len(arr)):
-            if i == o:
+            if i == o: #don't touch current o
                 continue
-            try:
+            try: #if prod doesn't exist
                 prod
             except NameError:
                 prod = arr[i]
             else:
                 prod *= arr[i]
         result.append(prod)
-        del prod
+        del prod #make prod disappear
     return result
 
 
