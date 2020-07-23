@@ -7,16 +7,16 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
     result = []
-    for o in range(len(arr)):
-        for i in range(len(arr)):
-            if i == o: #don't touch current o
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if j == i: #don't touch current o
                 continue
             try: #if prod doesn't exist
                 prod
             except NameError:
-                prod = arr[i]
+                prod = arr[j]
             else:
-                prod *= arr[i]
+                prod *= arr[j]
         result.append(prod)
         del prod #make prod disappear
     return result
